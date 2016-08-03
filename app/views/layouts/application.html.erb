@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bookstore</title>
+  <title><%= @page_title ? @page_title : "Welcome" %> | The Bookstore</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <%= render 'layouts/header' %>
-
-<%= yield %>
-
+<section>
+  <div class="container">
+    <div clas="row">
+      <div class="col-md-8">
+        <%= yield %>
+      </div>
+      <div class="col-md-4">
+        <%= render 'partials/sidebar' %>
+      </div>
+    </div>
+  </div>
+</section>
+<%= render 'layouts/footer' %>
 </body>
 </html>
