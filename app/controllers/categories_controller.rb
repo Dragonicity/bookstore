@@ -7,6 +7,8 @@ class CategoriesController < ApplicationController
   end
 
   def new
+    @page_title = 'Add Category'
+    @category = Category.new
   end
 
   def edit
@@ -21,4 +23,8 @@ class CategoriesController < ApplicationController
   def destroy
   end
   
+  private
+    def category_params
+      params.require(:category).permit(:name)
+    end
 end
