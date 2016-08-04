@@ -1,15 +1,14 @@
 <div id="books-show">
-  <h2>Ruby On Rails Power</h2>
+  <h2><%= @book.title %></h2>
   <div class="books-show-left">
     <%= image_tag('') %>
   </div>
   <div class="books-show-right">
     <h3>Book Info</h3>
     <ul>
-      <li><strong>Category: </strong>Ruby On Rails</li>
+      <li><strong>Category: </strong><%= @book.category.name %></li>
       <li><strong>Author: </strong>Some twat</li>
-      <li><strong>Publisher: </strong>Course technology PTR</li>
-      <li><strong>ISBN: </strong>1234567890</li>
+      <li><strong>ISBN: </strong><%= @book.isbn %></li>
     </ul>
     <%=link_to "",'XXX', class: 'btn btn-success', target: 'XXX' %>
   </div>
