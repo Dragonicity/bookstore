@@ -7,12 +7,18 @@ class AuthorsController < ApplicationController
   end
 
   def new
+    @page_title = 'Add Author'
+    @author = Author.new
   end
 
   def edit
   end
 
   def create
+    @author = Author.new(author_params)
+    @author.save
+
+    redirect_to authors_path
   end
 
   def update

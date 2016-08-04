@@ -7,12 +7,18 @@ class PublishersController < ApplicationController
   end
 
   def new
+    @page_title = 'Add Publisher'
+    @publisher = Publisher.new
   end
 
   def edit
   end
 
   def create
+    @publisher = Publisher.new(publisher_params)
+    @publisher.save
+
+    redirect_to publishers_path
   end
 
   def update
